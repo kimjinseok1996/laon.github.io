@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="k">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>newyork</title>
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<script src="https://kit.fontawesome.com/9448297042.js" crossorigin="anonymous"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500&display=swap');
+
+		html{
+			scroll-behavior: smooth;
+		}
+		body{
+			width: 100%;
+			margin : 0 auto;
+			font-family: 나눔고딕;
+			overflow-x: hidden;
+		}
+		header{
+			width: 100%;
+			height: 95px;
+			background: white;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			text-align: center;
+			font-weight: bold;
+			border-bottom: 2px solid gray;
+		}
+		a{
+			color: black;
+			text-decoration: none;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		nav{
+			position: absolute;
+			bottom: 0%;
+			width: 100%;
+			margin-bottom: 7px;
+		}
+		#logo{
+			float: left;
+			margin: 15px;
+		}
+		#logo img{
+			width: 130px;
+			height: auto;
+		}
+		input[type=text]{
+			width: 300px;
+			height: 30px;
+			margin-top: 20px;
+			background: url(search-white.png) no-repeat 16px white;
+			border: 3px solid #a6c6f8;
+			outline: none;
+			text-align: left;
+			line-height: 50px;
+			font-size: 16px;
+			transition: 0.6s;
+			color: black;
+			padding-left: 50px;
+			transition: 0.6s;
+			border-radius: 20px;
+			margin-left: -150px;
+		}
+		input[type=text]:focus{
+			border: 1px solid black;
+			background: white;
+			width: 500px;
+			border-radius: 0;
+		}
+		#mypage{
+			position: absolute;
+			top: 15px;
+			right: 25px;
+			font-size: 35px;
+		}
+		#mainmenu li a{
+			float: left;
+			width: 16%;
+			transition: 0.2s;
+		}
+		#mainmenu li a:hover{
+			color: #a6c6f8;
+		}
+		/*---------------------------------*/
+		section{
+			width: 100%;
+			/*height:800px;*/
+		}
+		#box1{
+			width: 100%;
+			height: 800px;
+			background:url(sub_banner.jpg) no-repeat;
+			background-size: cover;
+			margin-bottom: 100px;
+/*			position: relative;
+			top: 95px;
+			left: 0;*/
+		}
+		/*-------------box2--------------------*/
+		#box2{
+			width: 100%;
+			height: 1200px;
+			background: white;
+			text-align: center;
+		}
+		#box2 h1{
+			font-weight: 500;
+			font-size: 50px;
+			line-height: 15px;
+		}
+		#box2 h1:nth-child(2){
+			font-size: 70px;
+			font-weight: 700;
+		}
+		.mini_banner{
+			width: 900px;
+			margin: 0 auto;
+		}
+		.mini_banner img{
+			float: left;
+			width: 200px;
+			height: 400px;
+			margin: 50px;
+			box-shadow: 2px 2px 5px gray;
+			border-radius: 10px;
+		}
+		/*-------------box3--------------------*/
+		#box3{
+			width: 100%;
+			height: 1800px;
+			background:#f2f7ff;	
+		}
+		#box3 > h1{
+			text-align: center;
+			line-height: 0px;
+			color: black;
+		}
+		#box3 > h1:nth-child(1){
+			padding-top: 100px;
+		}
+		#box3 > h1:nth-child(2){
+			font-size: 70px;
+			margin-bottom: 70px;
+			color: black;
+		}
+		#box3 h1:nth-child(2):after{
+			content: "";
+			display: block;
+			clear: both;
+			background: #a6c6f8;
+			width: 330px;
+			height: 30px;
+			margin: 0 auto;
+		}
+		#box3 > h2{
+			text-align: center;
+			line-height: 10px;
+			font-weight: 400;
+		}
+		#free_boxes{
+			width: 1270px;
+			margin: 0 auto;
+		}
+		.free_box{
+			border: 1px solid #e3e3e3;
+			float: left;
+			width: 550px;
+			height: 630px;
+			margin: 40px;
+			box-shadow: 1px 1px 5px gray;
+			background: white;
+		}
+		.free_box:hover{
+			cursor: pointer;
+		}
+		.free_pic{
+			width: 550px;
+			height: 300px;
+		}
+		#free_pic1{
+			background:url(liberty.jpg) no-repeat center bottom;
+			background-size: cover;
+		}
+		#free_pic2{
+			background:url(universal.jpg) no-repeat center center;
+			background-size: cover;
+		}
+		#free_pic3{
+			background:url(hwi.jpg) no-repeat;
+			background-size: cover;
+		}
+		#free_pic4{
+			background:url(yy.jpeg) no-repeat;
+			background-size: cover;
+		}
+		.free_cont{
+			padding: 32px;
+		}
+		.free_btn{
+			border: 1px solid black;
+			padding: 3px;
+		}
+		/*-------------box4--------------------*/
+		#box4{
+			width: 100%;
+			height: 1800px;
+			background:white;	
+		}
+		#box4 > h1{
+			text-align: center;
+			line-height: 0px;
+			color: black;
+		}
+		#box4 > h1:nth-child(1){
+			padding-top: 100px;
+		}
+		#box4 > h1:nth-child(2){
+			font-size: 70px;
+			margin-bottom: 70px;
+			color: black;
+		}
+		#box4 h1:nth-child(2):after{
+			content: "";
+			display: block;
+			clear: both;
+			background: #a6c6f8;
+			width: 550px;
+			height: 30px;
+			margin: 0 auto;
+		}
+		#box4 > h2{
+			text-align: center;
+			line-height: 10px;
+			font-weight: 400;
+		}
+		#box4 #free_pic1{
+			background:url(tesla.jpg) no-repeat center bottom;
+			background-size: cover;
+		}
+		#box4 #free_pic2{
+			background:url(spacex.jpg) no-repeat;
+			background-size: cover;
+		}
+		#box4 #free_pic3{
+			background:url(musk.jpg) no-repeat;
+			background-size: cover;
+		}
+		#box4 #free_pic4{
+			background:url(mars.jpg) no-repeat;
+			background-size: cover;
+		}
+		/*-------------box5--------------------*/
+		#box5{
+			width: 100%;
+			height: 1800px;
+			background:#f2f7ff;	
+		}
+		#box5 > h1{
+			text-align: center;
+			line-height: 0px;
+			color: black;
+		}
+		#box5 > h1:nth-child(1){
+			padding-top: 100px;
+		}
+		#box5 > h1:nth-child(2){
+			font-size: 70px;
+			margin-bottom: 70px;
+			color: black;
+		}
+		#box5 h1:nth-child(2):after{
+			content: "";
+			display: block;
+			clear: both;
+			background: #a6c6f8;
+			width: 450px;
+			height: 30px;
+			margin: 0 auto;
+		}
+		#box5 > h2{
+			text-align: center;
+			line-height: 10px;
+			font-weight: 400;
+		}
+		#box5 #free_pic1{
+			background:url(car.jpg) no-repeat center bottom;
+			background-size: cover;
+		}
+		#box5 #free_pic2{
+			background:url(newyork_hotel.jpg) no-repeat;
+			background-size: cover;
+		}
+		#box5 #free_pic3{
+			background:url(las.jpg) no-repeat;
+			background-size: cover;
+		}
+		#box5 #free_pic4{
+			background:url(ship.jpg) no-repeat;
+			background-size: cover;
+		}
+		/*-------------box6--------------------*/
+		#box6{
+			width: 100%;
+			height: 140px;
+			background: #f2f7ff;
+			text-align: center;
+			padding-top: 100px;
+		}
+		#box6 a{
+			background: #1f1f1f;
+			color: #a6c6f8;
+			padding: 30px;
+			font-size: 27px;
+			border-radius: 50px;
+		}
+		/*-------------box7--------------------*/
+		#box7{
+			width: 100%;
+			height: 150px;
+			padding-top: 100px;
+		}
+		#plane{
+			width: 1300px;
+			height: 150px;
+			background:url(plane.jpg) no-repeat center bottom;
+			background-size: cover;
+			margin: 0 auto;
+			padding: 20px;
+			padding-left: 70px;
+			padding-top: 30px;
+		}
+		#plane h1:nth-child(1){
+			color: white;
+			line-height: 0px;
+		}
+		#plane h1:nth-child(2){
+			color: white;
+			font-size: 43px;
+			margin-top: -5px;
+		}
+		/*-------------푸터--------------------*/
+
+		footer{
+			width: 100%;
+			height: 500px;
+			background: white;
+			padding-top: 110px;
+			
+		}
+		#foot{
+			border-top: 2px solid black;
+			width: 1400px;
+			height: 400px;
+			background: white;
+			margin: 0 auto;
+		}
+		.foot_cont{
+			float: left;
+			width: 310px;
+			height: 400px;
+			padding-top: 40px;
+			padding-left: 30px;
+			padding-right: 5px;
+			line-height: 20px;
+		}
+		#foot_third img{
+			width: 330px;
+			height: 360px;
+		}
+		#foot_first{
+			margin-top: 60px;
+		}
+		span{
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<a href="http://sining94.dothome.co.kr" id="logo"><img src="ll.png" alt=""></a>
+		<form action=""><input type="text" size="40" id="search"></form>
+		<a href="" id="mypage"><i class="fas fa-user"></i></a>
+		<nav>
+			<ul id="mainmenu">
+				<li><a href="#">전체메뉴</li>
+				<li><a href="http://sining94.dothome.co.kr/#box2">라온</a></li>
+				<li><a href="http://sining94.dothome.co.kr/#box3">달력</a></li>
+				<li><a href="http://sining94.dothome.co.kr/#box4">항공/숙박</a></li>
+				<li><a href="http://sining94.dothome.co.kr/#box5">국내여행</a></li>
+				<li><a href="http://sining94.dothome.co.kr/#box6">해외여행</a></li>
+		    </ul>
+		</nav>
+	</header>
+	<section id="box1"></section>
+	<section id="box2">
+		<h1>라온투어 추천</h1>
+		<h1>품격여행</h1>
+		<div class="mini_banner">
+			<img src="mini_banner01.jpg" alt="">
+			<img src="mini_banner02.jpg" alt="">
+			<img src="mini_banner03.jpg" alt="">
+			<img src="mini_banner04.jpg" alt="">
+			<img src="mini_banner05.jpg" alt="">
+			<img src="mini_banner06.jpg" alt="">
+		</div>
+	</section>
+	<section id="box3">
+		<h1>우리 미국으로 가볼까?</h1>
+		<h1>우리끼리</h1>
+		<h2>#미국에서_라온</h2>
+		<h2>#편안한_렌터카_이동서비스</h2>
+		<h2>#숨어있는관광지에서_인생샷</h2>
+		<div id="free_boxes">
+			<div class="free_box">
+				<div class="free_pic" id="free_pic1"></div>
+				<div class="free_cont">
+					<span class="free_btn">도시여행</span>
+					<h2>뉴욕커로 즐겨보기 #6박7일 #뉴요커</h2>
+					영화속에서 보던 뉴요커의 삶을 느켜보기<br>
+					바쁘게 돌아가는 뉴욕 도시에서 여유로움 만끽하기<br>
+					렌터카 포함<br>
+					<h2>2,700,000원~</h2>
+					<span class="free_btn">자유의여신상</span>
+					<span class="free_btn">타임스퀘어</span>
+					<span class="free_btn">메트로폴리탄</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic2"></div>
+				<div class="free_cont">
+					<span class="free_btn">환상여행</span>
+					<h2>플로리다에서 떠나는 세계 #디즈니 #해리포터</h2>
+					동심가득한 디즈니 랜드에서<br>
+					해리포터의 세계로 가는 유니버셜 스튜디오<br>
+					렌터카 포함<br>
+					<h2>1,400,000원~</h2>
+					<span class="free_btn">디즈니랜드</span>
+					<span class="free_btn">유니버셜스튜디오</span>
+					<span class="free_btn">렌터카포함</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic3"></div>
+				<div class="free_cont">
+					<span class="free_btn">휴식여행</span>
+					<h2>여유로운 바다에서 휴식중 #하와이 #여유</h2>
+					와이키키에서 칵테일 한잔 <br>
+					쿠알로아 목장에서 즐기는 자연 액티비티<br>
+					렌터카 포함<br>
+					<h2>1,200,000원~</h2>
+					<span class="free_btn">와이키키해변</span>
+					<span class="free_btn">쿠알로아목장</span>
+					<span class="free_btn">렌터카포함</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic4"></div>
+				<div class="free_cont">
+					<span class="free_btn">자연여행</span>
+					<h2>미국에서 느끼는 자연의 위대함 #국립공원 #광활</h2>
+					내 눈으로 보는 전설적인 간헐천 올드 페이쓰풀<br>
+					무지개색이 나는 온천호수에서 느끼는 자연<br>
+					렌터카 포함<br>
+					<h2>1,700,000원~</h2>
+					<span class="free_btn">옐로스톤</span>
+					<span class="free_btn">국립공원</span>
+					<span class="free_btn">렌터카포함</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="box4">
+		<h1>미국에서 앨론머스크와 함께</h1>
+		<h1>앨론머스크 세트</h1>
+		<h2>#앨론머스크_내친구</h2>
+		<h2>#테슬라_우주왕복선까지</h2>
+		<h2>#개미들_테슬라로모여</h2>
+		<div id="free_boxes">
+			<div class="free_box">
+				<div class="free_pic" id="free_pic1"></div>
+				<div class="free_cont">
+					<span class="free_btn">차박여행</span>
+					<h2>테슬라차로 해보는 차박여행 #차박 #테슬라스테이</h2>
+					테슬라와 함께 가는 여행지들<br>
+					아기자기한 테슬라모델에 자리잡은 앨론머스크<br>
+					렌터카 포함<br>
+					<h2>7,700,000원~</h2>
+					<span class="free_btn">테슬라</span>
+					<span class="free_btn">주식</span>
+					<span class="free_btn">렌터카포함</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic2"></div>
+				<div class="free_cont">
+					<span class="free_btn">우주선여행</span>
+					<h2>너 우주 가봤니? 난 가봤다.</h2>
+					한 번쯤 머물고 싶었던 우주선에서의 휴식<br>
+					아기자기한 SPACE X에 자리잡은 나만의 숙소<br>
+					렌터카 포함<br>
+					<h2>2,100,000원~</h2>
+					<span class="free_btn">왕복우주선</span>
+					<span class="free_btn">SPACE</span>
+					<span class="free_btn">우주선포함</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic3"></div>
+				<div class="free_cont">
+					<span class="free_btn">앨론머스크와함께</span>
+					<h2>앨론머스크? 마이 American 프렌드~!</h2>
+					대주주 집에서 미국 여행 해봤어?<br>
+					아기자기한 홈에 자리잡은 엘론머스크<br>
+					렌터카 포함<br>
+					<h2>4,200,000원~</h2>
+					<span class="free_btn">앨론머스크</span>
+					<span class="free_btn">단독미팅</span>
+					<span class="free_btn">렌터카포함</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic4"></div>
+				<div class="free_cont">
+					<span class="free_btn">화성이주여행</span>
+					<h2>수원화성아니고 우주 화성</h2>
+					지구에서 아닌 다른 행성 가봤니?<br>
+					나는 모든 화성은 다 가봤다<br>
+					우주선 포함<br>
+					<h2>2,700,000원~</h2>
+					<span class="free_btn">화성</span>
+					<span class="free_btn">우주인되기</span>
+					<span class="free_btn">우주복포함</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="box5">
+		<h1>미국에서도 부자처럼</h1>
+		<h1>Rich 패키지</h1>
+		<h2>#플렉스로_만족감상승</h2>
+		<h2>#money_make_happy</h2>
+		<h2>#어디에도_없는_사치여행</h2>
+		<div id="free_boxes">
+			<div class="free_box">
+				<div class="free_pic" id="free_pic1"></div>
+				<div class="free_cont">
+					<span class="free_btn">슈퍼카여행</span>
+					<h2>여행의 떨림, 16기통의 떨림 #슈퍼카차박</h2>
+					한 번쯤 머물고 싶었던 슈퍼카 에서의 휴식<br>
+					아기자기한 슈퍼카 행열 속 자리잡은 나만의 차<br>
+					렌터카 포함<br>
+					<h2>14,999,900원~</h2>
+					<span class="free_btn">슈퍼카</span>
+					<span class="free_btn">사치</span>
+					<span class="free_btn">드림카</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic2"></div>
+				<div class="free_cont">
+					<span class="free_btn">맨허튼시티뷰</span>
+					<h2>맨허튼 뷰에서 와인한잔 </h2>
+					지상 541M 구름 보다 높은 곳에서의 휴식<br>
+					아기자기한 도시 한가운데 자리잡은 가장 큰 호텔<br>
+					렌터카 포함<br>
+					<h2>9,999,000원~</h2>
+					<span class="free_btn">호텔</span>
+					<span class="free_btn">사치여행</span>
+					<span class="free_btn">신선놀음</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic3"></div>
+				<div class="free_cont">
+					<span class="free_btn">카지노여행</span>
+					<h2>카지노에서 모히또 한 잔</h2>
+					일찍 일어나는 새가 돈을 딴다<br>
+					아기자기한 도박장 한가운데 자리잡은 부자들의 싸움<br>
+					렌터카 포함<br>
+					<h2>자유금액</h2>
+					<span class="free_btn">카지노</span>
+					<span class="free_btn">배팅</span>
+					<span class="free_btn">사치여행</span>
+				</div>
+			</div>
+			<div class="free_box">
+				<div class="free_pic" id="free_pic4"></div>
+				<div class="free_cont">
+					<span class="free_btn">크루즈여행</span>
+					<h2>선상에서 즐기는 여유로움 #크루즈</h2>
+					돌아다니기 귀찮은 당신을 위한 대해항 여행<br>
+					아기자기한 요트 속 화려한 파티와 음식들<br>
+					렌터카 미포함<br>
+					<h2>79,999,990원~</h2>
+					<span class="free_btn">사치여행</span>
+					<span class="free_btn">요트여행</span>
+					<span class="free_btn">실버산업</span>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="box6">
+		<a href="">더 많은 패키지 여행 보러가기 > </a>
+	</section>
+	<section id="box7">
+		<a href=""><div id="plane">
+			<h1>해외여행 관련</h1>
+			<h1> FAQ 보러가기 > </h1>
+		</div></a>
+	</section>
+	<footer>
+		<div id="foot">
+			<div class="foot_cont" id="foot_first">
+				<h2>라온투어닷컴 고객센터</h2>
+				<h2>0000-0000</h2> <br><br>
+				<span><a href="#">자주 찾는 질문 ></a><br>
+				<a href="#">ARS상담번호 안내 ></a></span>
+			</div>
+			<div class="foot_cont" id="foot_second">
+				<h4>해외여행 문의</h4>
+				<span>평일: 09:00~18:00 <br><br>
+				※코로나 바이러스19로 인한 근무 시간 축소로 주말 및 야간 상담 서비스가 임시 중단 됩니다. <br>더 나은 서비스로 찾아뵐 수 있도록 하겠습니다.</span>
+				<h4>상담번호 안내</h4>
+				<span>1번 예약상담<br>2번 ARS 예약 확인 및 결제 확인 <br>3번 국내공연예매, 마일리지 및 제휴카드, 기타문의</span>
+			</div>
+			<div class="foot_cont" id="foot_third">
+				<h4>국내여행/기업출장/교육여행 단체 문의</h4>
+				평일: 09:00~18:00 <br><br><br>
+				<h4>법인고객 전용상담 0000-0000</h4>
+				<h4>안심카드결제 ARS 0000-0000</h4>
+			</div>
+			<div class="foot_cont" id="foot_third">
+				<a href=""><img src="sung.jpg" alt=""></a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
